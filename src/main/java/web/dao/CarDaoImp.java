@@ -1,15 +1,13 @@
 package web.dao;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import web.model.Car;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Repository
-public class CarDAO {
+public class CarDaoImp implements CarDao{
     private List<Car> cars;
 
     {
@@ -21,16 +19,12 @@ public class CarDAO {
         cars.add(new Car( "Bugatti",2010,4));
 
     }
+    @Override
     public List<Car> getCars(int count){
         if (count>=5) {
             return cars;
         }
-        return Collections.singletonList(cars.get(count));
+        return cars.subList(0,count);
     }
-//    public List<Car> getOneCar(int count){
-//        if (count>=5){
-//            return cars;
-//        }
-//        return cars.stream().filter(car -> car.getCount()==count).findAny().stream().toList();
-//    }
+
 }
