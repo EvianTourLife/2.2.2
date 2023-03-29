@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Машины</title>
+</head>
+<body>
+
+
+
+
+<table th:border="3" th:align="center" th:width="300" th:bgcolor="DarkCyan" th:cellspacing="0" th:cellpadding="10" style="margin-top: 150px">
+  <tread>
+    <tr>
+      <th>Brand</th>
+      <th>Release</th>
+      <th>Owners</th>
+    </tr>
+  </tread>
+  <tbody>
+  <tr th:each="car : ${cars}">
+  <td><span th:text="${car.getBrand()}"> Brand </span></td>
+  <td><span th:text="${car.getReleaseDate()}"> Release </span></td>
+  <td><span th:text="${car.getOwners()}"> Owners </span></td>
+  </tr>
+  </tbody>
+<!--  <a th:text="${car.getBrand()}"></a>-->
+<!--    <a th:text="${car.getReleaseDate()}"></a>-->
+<!--    <a th:text="${car.getOwners()}"></a>-->
+
+</table>
+
+
+
+
+
+
+
+<!--<table border="3" align="center" width="80%">-->
+<!--  <tr>-->
+<!--    <th>Brand</th>-->
+<!--    <th>Release</th>-->
+<!--    <th>Owners</th>-->
+<!--  </tr>-->
+<!--  <th:block th:each="car : ${cars}">-->
+<!--    <a th:text="${car.getBrand()}"></a>-->
+<!--    <a th:text="${car.getReleaseDate()}"></a>-->
+<!--    <a th:text="${car.getOwners()}"></a>-->
+<!--</table>-->
+
+<!--  <th:block th:each="car : ${cars}">-->
+<!--    <a th:text="${car.getBrand()}"></a>-->
+<!--    <a th:text="${car.getReleaseDate()}"></a>-->
+<!--    <a th:text="${car.getOwners()}"></a>-->
+<!--    <th>Brand</th>-->
+<!--    <th>Release Date</th>-->
+<!--    <th>Owners</th>-->
+<!--    <h1 th:text="${cars}"></h1>-->
+  </th:block>
+<!--  <a th:href="@{/cars/{count}(count=${car.getCount()})}" th:text="${car.getBrand()}">user</a>-->
+
+
+</body>
+</html>
